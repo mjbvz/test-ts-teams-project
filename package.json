@@ -1,0 +1,22 @@
+{
+  "name": "test-ts-teams-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal repro: memory/file-count cost of importing @microsoft/teams.graph-endpoints in a fresh TypeScript project",
+  "scripts": {
+    "measure:baseline:tsc": "tsc --noEmit -p tsconfig.baseline.json --extendedDiagnostics",
+    "measure:baseline:tsgo": "tsgo --noEmit -p tsconfig.baseline.json --extendedDiagnostics",
+    "measure:barrel:tsc": "tsc --noEmit -p tsconfig.barrel.json --extendedDiagnostics",
+    "measure:barrel:tsgo": "tsgo --noEmit -p tsconfig.barrel.json --extendedDiagnostics",
+    "measure:subpath:tsc": "tsc --noEmit -p tsconfig.subpath.json --extendedDiagnostics",
+    "measure:subpath:tsgo": "tsgo --noEmit -p tsconfig.subpath.json --extendedDiagnostics",
+    "measure": "node measure.mjs"
+  },
+  "dependencies": {
+    "@microsoft/teams.graph-endpoints": "^2.0.7"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "latest",
+    "typescript": "^5.8.3"
+  }
+}
